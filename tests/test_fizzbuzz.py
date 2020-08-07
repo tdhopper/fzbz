@@ -1,3 +1,5 @@
+from itertools import zip_longest
+
 import fzbz as fizzbuzz
 
 FIZZ_BUZZ = [
@@ -105,6 +107,6 @@ FIZZ_BUZZ = [
 
 
 def test_all():
-    for x, y in zip(fizzbuzz, FIZZ_BUZZ):
+    for x, y in zip_longest(fizzbuzz, FIZZ_BUZZ, fillvalue=None):
         assert x is not None
         assert x == y
